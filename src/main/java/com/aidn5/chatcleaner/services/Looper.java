@@ -8,7 +8,7 @@ public class Looper {
 
 	public List<Runnable> runnableList;
 
-	private int tickDelay = 40 * 60 * 15;
+	private int tickDelay = 40;
 	private int tickCount = 0;
 
 	public Looper() {

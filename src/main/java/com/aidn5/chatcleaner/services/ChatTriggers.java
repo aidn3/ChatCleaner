@@ -50,13 +50,11 @@ public class ChatTriggers {
 				settings.SaveCacheSettings(rawTriggers, PATH_CACHE);
 				return triggers;
 			}
-		} catch (Exception e) {
-		}
+		} catch (Exception e) {}
 
 		cache_settings = settings.LoadCacheSettings(PATH_CACHE);
 		triggers = jsonParser_.parse(cache_settings);
-		if (triggers != null)
-			return triggers;
+		if (triggers != null) return triggers;
 
 		return default_settings;
 
@@ -64,19 +62,16 @@ public class ChatTriggers {
 
 	private class JsonParser_ {
 		List<Trigger> parse(String string) {
-			if (string == null || string.isEmpty())
-				return null;
+			if (string == null || string.isEmpty()) return null;
 			List<Trigger> tiggersArray = null;
 			try {
 				return parse(new JsonParser().parse(string).getAsJsonObject());
-			} catch (Exception ignored) {
-			}
+			} catch (Exception ignored) {}
 			return null;
 		}
 
 		List<Trigger> parse(JsonObject jsonObject) {
-			if (jsonObject == null)
-				return null;
+			if (jsonObject == null) return null;
 			try {
 				JsonArray tiggersJson = jsonObject.getAsJsonArray("triggers");
 
@@ -88,9 +83,9 @@ public class ChatTriggers {
 						trigger.pattern = Pattern.compile(jsonElement2.getAsJsonObject().get("regex").getAsString());
 						trigger.replaceWith = jsonElement2.getAsJsonObject().get("replaceWith").getAsString();
 						trigger.Priority = jsonElement2.getAsJsonObject().get("priority").getAsInt();
+						trigger.ID = jsonElement2.getAsJsonObject().get("id").getAsString();
 						tiggersArray.add(trigger);
-					} catch (Exception ignored) {
-					}
+					} catch (Exception ignored) {}
 				}
 				return tiggersArray;
 			} catch (Exception ignored) {
@@ -115,8 +110,7 @@ public class ChatTriggers {
 					response.append(inputLine);
 
 				jsonObject = new JsonParser().parse(response.toString()).getAsJsonObject();
-				if (jsonObject == null)
-					throw new Exception("Can't parse default_Settings");
+				if (jsonObject == null) throw new Exception("Can't parse default_Settings");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -139,8 +133,7 @@ public class ChatTriggers {
 
 				jsonObject = new JsonParser().parse(sb.toString()).getAsJsonObject();
 
-			} catch (Exception e) {
-			}
+			} catch (Exception e) {}
 			return jsonObject;
 		}
 
@@ -149,8 +142,7 @@ public class ChatTriggers {
 				PrintWriter writer = new PrintWriter(PATH, "UTF-8");
 				writer.println(data);
 				writer.close();
-			} catch (Exception e) {
-			}
+			} catch (Exception e) {}
 		}
 	}
 
@@ -158,5 +150,6 @@ public class ChatTriggers {
 		public Pattern pattern = null;
 		public String replaceWith = "";
 		public int Priority = 1;
+		public String ID = "";
 	}
 }

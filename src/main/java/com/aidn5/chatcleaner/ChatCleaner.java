@@ -5,6 +5,7 @@ import com.aidn5.chatcleaner.config.Config;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -13,7 +14,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 
-@Mod(modid = Config.MODID, version = Config.VERSION, name = Config.MOD_NAME, clientSideOnly = true)
+@Mod(modid = Config.MODID, version = Config.VERSION, name = Config.MOD_NAME, clientSideOnly = true, guiFactory = "com.aidn5.chatcleaner.gui.GuiFactory")
 public class ChatCleaner {
 	public static Handler_ Handler_;
 
@@ -27,8 +28,7 @@ public class ChatCleaner {
 
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public void onPlayerChatReceive(ClientChatReceivedEvent event) {
-		if (event.type != 0)
-			return;
+		if (event.type != 0) return;
 
 		String message = event.message.getUnformattedText();
 		if (Handler_.matchRegex(message)) {
@@ -42,8 +42,7 @@ public class ChatCleaner {
 			Minecraft mc = Minecraft.getMinecraft();
 			boolean b = mc.getCurrentServerData().serverIP.toLowerCase().contains("hypixel.net");
 			Handler_.onHypixel = b;
-		} catch (Exception ignore) {
-		}
+		} catch (Exception ignore) {}
 	}
 
 	@SubscribeEvent
@@ -54,6 +53,13 @@ public class ChatCleaner {
 	@SubscribeEvent
 	public void onGameTick(TickEvent.ClientTickEvent event) {
 		Handler_.looper.doTick();
+	}
+
+	@SubscribeEvent
+	public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
+		if (event.modID.equals(Config.MODID)) {
+			Handler_.guiSettings.onConfigChange();
+		}
 	}
 
 }
