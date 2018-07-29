@@ -1,0 +1,155 @@
+{
+    "triggers": [
+        {
+            "regex": "^\\[WATCHDOG ANNOUNCEMENT\\]",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^Watchdog has banned (?:[0-9,]{1,10})? players in the last",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^Blacklisted modifications are a bannable offense!$",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^Cross-teaming is not allowed! Report cross-teamers on the",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^Teaming is not allowed ",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^Sending you to",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^Already connecting to this server",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^Queued! Use the bed to return to lobby!$",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^You were teleported to(?:| \\[[a-zA-Z+]{3,16}\\]|)(?: [a-zA-Z0-9_]{3,32})$",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^(?:\\[[a-zA-Z+]{3,16}\\] |)(?:[a-zA-Z0-9_]{3,32}) has found [A-z \\(\\)]{1,100} in the Soul Well!",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^The game starts in (?:[6-9])? seconds",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^The game starts in (?:[0-4])? seconds",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^Cages open in: (?:[6-9]|4)? seconds",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^Cages opened! FIGHT",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^\\+(?:[0-9]{1,5})? coins!",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^\\+(?:[0-9]{1,5})? Soul!",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^\\+(?:[0-9]{1,5})? Bed Wars Experience",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^You don't have enough (?:[A-z]{1,32})?!",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^You purchased ",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^You will respawn in (?:4|2)? seconds",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^You have respawned!",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^Type \/kits to re-open the kit selection",
+            "replaceWith": "",
+            "priority": 1
+        },
+        {
+            "regex": "^No stats will be affected in this round",
+            "replaceWith": "",
+            "priority": 2
+        },
+        {
+            "regex": "^Server mini181P shutdown at",
+            "replaceWith": "",
+            "priority": 2
+        },
+        {
+            "regex": "^\\+(?:[0-9]{1,5})? Karma!",
+            "replaceWith": "",
+            "priority": 2
+        },
+        {
+            "regex": "^You will respawn in (?:5|3|1)? seconds",
+            "replaceWith": "",
+            "priority": 2
+        },
+        {
+            "regex": "^The game starts in (?:5|10)? seconds",
+            "replaceWith": "",
+            "priority": 2
+        },
+        {
+            "regex": "^Cages open in: (?:[0-9]{1,3})? seconds",
+            "replaceWith": "",
+            "priority": 2
+        },
+        {
+            "regex": "^You have selected the ",
+            "replaceWith": "",
+            "priority": 2
+        },
+        {
+            "regex": "^(?:\\[[a-zA-Z+]{3,16}\\] |)(?:[a-zA-Z0-9_]{3,32}) has joined \\(",
+            "replaceWith": "",
+            "priority": 3
+        }
+    ]
+}
+
