@@ -2,13 +2,13 @@
 {
   "modid": "ChatCleaner",
   "name": "ChatCleaner",
-  "description": "Clear/hide unnecceccry in-game messages.",
-  "version": "0.1.0",
+  "description": "Clear\/hide unnecceccry in-game messages.",
+  "version": "0.2.0",
   "mcversion": "1.8.9",
   "url": "https://github.com/aidn3/ChatCleaner",
   "updateUrl": "",
   "authorList": ["aidn5"],
-  "credits": "Special thanks to Meelqd",
+  "credits": "Special thanks to §6Meelqd (who let me re-create his mod)",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

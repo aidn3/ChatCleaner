@@ -25,10 +25,9 @@ public class Command extends CommandBase {
 	@Override
 	public void processCommand(ICommandSender sender, String[] args) throws CommandException {
 		SettingsHandler settings = ChatCleaner.Handler_.settingsHandler;
-		int maximum = Integer.valueOf(settings.get("maximum", "3"));
 		int current = Integer.valueOf(settings.get("priority", "1"));
 		int changeTo = 0;
-		if (current == maximum) {
+		if (current == 3) {
 			changeTo = 0;
 		} else {
 			changeTo = current + 1;
@@ -41,7 +40,7 @@ public class Command extends CommandBase {
 	private String getPriorityName(int stat) {
 		switch (stat) {
 		case 0:
-			return "'disabled'";
+			return "(disabled)";
 
 		case 1:
 		default:

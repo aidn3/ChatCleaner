@@ -43,8 +43,7 @@ public class SettingsHandler {
 	public String get(String key, String default_) {
 		try {
 			String value = settings_data.getProperty(key);
-			if (value == null || value.isEmpty())
-				return default_;
+			if (value == null || value.isEmpty()) return default_;
 			return value;
 		} catch (Exception e) {
 			return null;
@@ -52,14 +51,16 @@ public class SettingsHandler {
 	}
 
 	public boolean set(String key, String value) {
+		return set(key, value, true);
+	}
+
+	public boolean set(String key, String value, boolean save) {
 		try {
 			settings_data.put(key, value);
 
-			if (IN_JAR)
-				return true;
-			return SaveUserSettings();
-		} catch (Exception e) {
-		}
+			if (IN_JAR) return true;
+			return (save ? SaveUserSettings() : true);
+		} catch (Exception e) {}
 		return false;
 	}
 
@@ -67,17 +68,14 @@ public class SettingsHandler {
 		try {
 			settings_data = new Properties();
 
-			if (IN_JAR)
-				return true;
+			if (IN_JAR) return true;
 			return SaveUserSettings();
-		} catch (Exception ignore) {
-		}
+		} catch (Exception ignore) {}
 		return false;
 	}
 
 	public boolean reloadUserSettings() {
-		if (!checkDir() && !IN_JAR)
-			return false;
+		if (!checkDir() && !IN_JAR) return false;
 		try {
 			if (IN_JAR) {
 				InputStreamReader inputStreamReader = new InputStreamReader(
@@ -97,8 +95,7 @@ public class SettingsHandler {
 	}
 
 	public boolean SaveUserSettings() {
-		if (!checkDir() || IN_JAR)
-			return false;
+		if (!checkDir() || IN_JAR) return false;
 		try {
 			OutputStream out = new FileOutputStream(LOCAL_SET);
 			settings_data.store(out, "localsettings");
@@ -110,18 +107,14 @@ public class SettingsHandler {
 	}
 
 	public boolean checkDir() {
-		if (IN_JAR)
-			return false;
-		if (DIR_CHECKED)
-			return true;
+		if (IN_JAR) return false;
+		if (DIR_CHECKED) return true;
 		try {
 			File dir = new File(CONFIG_DIR);
 			if (!dir.exists()) {
-				if (dir.mkdirs())
-					throw new Exception("unable to make dir");
+				if (dir.mkdirs()) throw new Exception("unable to make dir");
 			}
-			if (!dir.isDirectory())
-				throw new Exception("PATH is NOT DIR");
+			if (!dir.isDirectory()) throw new Exception("PATH is NOT DIR");
 			File settings_file = new File(LOCAL_SET);
 			if (!settings_file.exists()) {
 				if (!settings_file.createNewFile()) {

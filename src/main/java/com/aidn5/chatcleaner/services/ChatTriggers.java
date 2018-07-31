@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.io.IOUtils;
 
+import com.aidn5.chatcleaner.ChatCleaner;
 import com.aidn5.chatcleaner.config.Config;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -40,17 +41,20 @@ public class ChatTriggers {
 		return true;
 	}
 
-	public List<Trigger> getTriggers() {
+	public List<Trigger> getTriggers(boolean online) {
 		JsonParser_ jsonParser_ = new JsonParser_();
 		List<Trigger> triggers = null;
-		try {
-			String rawTriggers = IOUtils.toString(new URL(Config.updateURL));
-			triggers = jsonParser_.parse(rawTriggers);
-			if (triggers != null) {
-				settings.SaveCacheSettings(rawTriggers, PATH_CACHE);
-				return triggers;
-			}
-		} catch (Exception e) {}
+
+		if (online) {
+			try {
+				String rawTriggers = IOUtils.toString(new URL(Config.updateURL));
+				triggers = jsonParser_.parse(rawTriggers);
+				if (triggers != null) {
+					settings.SaveCacheSettings(rawTriggers, PATH_CACHE);
+					return triggers;
+				}
+			} catch (Exception e) {}
+		}
 
 		cache_settings = settings.LoadCacheSettings(PATH_CACHE);
 		triggers = jsonParser_.parse(cache_settings);
@@ -73,10 +77,12 @@ public class ChatTriggers {
 		List<Trigger> parse(JsonObject jsonObject) {
 			if (jsonObject == null) return null;
 			try {
+				ChatCleaner.Handler_.triggersRegex.reloadUserSettings();
 				JsonArray tiggersJson = jsonObject.getAsJsonArray("triggers");
 
 				List<Trigger> tiggersArray = new ArrayList<Trigger>();
 				Trigger trigger;
+
 				for (JsonElement jsonElement2 : tiggersJson) {
 					try {
 						trigger = new Trigger();
@@ -84,6 +90,12 @@ public class ChatTriggers {
 						trigger.replaceWith = jsonElement2.getAsJsonObject().get("replaceWith").getAsString();
 						trigger.Priority = jsonElement2.getAsJsonObject().get("priority").getAsInt();
 						trigger.ID = jsonElement2.getAsJsonObject().get("id").getAsString();
+						trigger.catogery = jsonElement2.getAsJsonObject().get("category").getAsString();
+						trigger.disc = jsonElement2.getAsJsonObject().get("disc").getAsString();
+
+						trigger.enabled = Boolean
+								.parseBoolean(ChatCleaner.Handler_.triggersRegex.get(trigger.ID, "false"));
+
 						tiggersArray.add(trigger);
 					} catch (Exception ignored) {}
 				}
@@ -149,7 +161,10 @@ public class ChatTriggers {
 	public class Trigger {
 		public Pattern pattern = null;
 		public String replaceWith = "";
+		public String disc = "[unkown]";
+		public String catogery = "default";
 		public int Priority = 1;
 		public String ID = "";
+		public boolean enabled = true;
 	}
 }

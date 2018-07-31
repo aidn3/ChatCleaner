@@ -1,50 +1,58 @@
 package com.aidn5.chatcleaner.gui;
 
-import java.io.File;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map.Entry;
 
-import net.minecraftforge.common.config.Configuration;
+import com.aidn5.chatcleaner.ChatCleaner;
+import com.aidn5.chatcleaner.Handler_;
+import com.aidn5.chatcleaner.services.ChatTriggers.Trigger;
+import com.mojang.realmsclient.gui.ChatFormatting;
+
+import net.minecraftforge.common.config.ConfigCategory;
+import net.minecraftforge.common.config.Property;
+import net.minecraftforge.common.config.Property.Type;
 
 public class GuiSettings {
+	HashMap<String, ConfigCategory> caHashMap;
 
-	public Configuration main_settings;
+	public HashMap<String, ConfigCategory> getMessages() {
+		List<Trigger> triggers = ChatCleaner.Handler_.triggers;
 
-	public boolean non_important_msg = true;
-	public boolean mid_important_msg = false;
-	public boolean high_important_msg = false;
+		caHashMap = new HashMap<String, ConfigCategory>();
 
-	public GuiSettings(String path) {
-		main_settings = new Configuration(new File(path + "main_settings.cfg"));
-		main_settings = new Configuration(new File(path + "regex_settings.cfg"));
-		syncConfig();
+		for (Trigger trigger : triggers) {
+			String color = ChatFormatting.WHITE + "";
+			if (trigger.Priority == 2) color = ChatFormatting.YELLOW + "";
+			else if (trigger.Priority == 3) color = ChatFormatting.DARK_RED + "";
+
+			ConfigCategory category;
+			if (!caHashMap.containsKey(trigger.catogery)) {
+				category = new ConfigCategory(trigger.catogery);
+				caHashMap.put(trigger.catogery, category);
+			} else {
+				category = caHashMap.get(trigger.catogery);
+			}
+
+			category.put(trigger.ID, new Property(color + trigger.disc,
+					ChatCleaner.Handler_.triggersRegex.get(trigger.ID, "false"), Type.BOOLEAN));
+
+		}
+
+		return caHashMap;
 	}
 
 	public void onConfigChange() {
-		main_settings.save();
-		syncConfig();
+		Handler_ handler_ = ChatCleaner.Handler_;
+		if (caHashMap == null || caHashMap.size() == 0) return;
+
+		for (Entry<String, ConfigCategory> category : caHashMap.entrySet()) {
+			for (Entry<String, Property> setting : category.getValue().entrySet()) {
+				handler_.triggersRegex.set(setting.getKey(), setting.getValue().getString(), false);
+			}
+		}
+		handler_.triggersRegex.SaveUserSettings();
+		handler_.triggers = handler_.ChatTriggers.getTriggers(false);
 	}
 
-	public void syncConfig() {
-		String settingsCategory = "Settings";
-		String regexCategory = "Messages";
-
-		main_settings.addCustomCategoryComment(settingsCategory, "Change main mod's settings");
-		non_important_msg = main_settings.getBoolean("non-important-messages", settingsCategory, true,
-				"Hiding non-important-messages in-game");
-
-		mid_important_msg = main_settings.getBoolean("mid-important-messages", settingsCategory, false,
-				"Hiding mid-important-messages in-game");
-
-		high_important_msg = main_settings.getBoolean("high-important-messages", settingsCategory, false,
-				"Hiding mid-important-messages in-game");
-
-		main_settings.save();
-	}
-
-	public void resetConfig() {
-		mid_important_msg = true;
-		mid_important_msg = true;
-		mid_important_msg = true;
-		main_settings.save();
-		syncConfig();
-	}
 }
