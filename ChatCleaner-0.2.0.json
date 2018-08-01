@@ -97,11 +97,11 @@
             "replaceWith": ""
         },
         {
-            "regex": "^(?:[a-zA-Z0-9_]{3,32}) (?:joined|left)",
+            "regex": "^(?:[a-zA-Z0-9_]{3,32}) (?:joined|left)$",
             "disc": "Friend joined\/left",
             "priority": 3,
             "category": "Lobby & Other",
-            "id": "988d01c6e8cd5b2f08b14839",
+            "id": "561261da12d21639a28a9dec",
             "replaceWith": ""
         },
         {
@@ -361,11 +361,11 @@
             "replaceWith": ""
         },
         {
-            "regex": "^(?:\\[[a-zA-Z+]{3,16}\\] |)(?:[a-zA-Z0-9_]{3,32})",
+            "regex": "(?:\\[[a-zA-Z+]{3,16}\\] |){1,3}(?:[a-zA-Z0-9_]{3,32}) entered the world",
             "disc": "SomeOne entered the world.",
             "priority": 2,
             "category": "Housing",
-            "id": "c7fc13408163f8d1fa93ff95",
+            "id": "3210a0e0dc5ab5f038d1bd2e",
             "replaceWith": ""
         },
         {
