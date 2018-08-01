@@ -13,9 +13,7 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 
 public class Command extends CommandBase {
-	private String primary = EnumChatFormatting.AQUA + "";
-	private String neutral = EnumChatFormatting.GRAY + "";
-	private String secondary = EnumChatFormatting.YELLOW + "";
+
 	private String[] commands_name;
 
 	public Command(String[] commands_name_) {
@@ -32,8 +30,9 @@ public class Command extends CommandBase {
 		} else {
 			changeTo = current + 1;
 		}
-		sender.addChatMessage(new ChatComponentText(primary + Config.MOD_NAME + ": " + neutral + "switching to hide "
-				+ secondary + getPriorityName(changeTo)));
+		sender.addChatMessage(
+				new ChatComponentText(EnumChatFormatting.AQUA + Config.MOD_NAME + ": " + EnumChatFormatting.GRAY
+						+ "switching to hide " + EnumChatFormatting.YELLOW + getPriorityName(changeTo)));
 		settings.set("priority", changeTo + "");
 	}
 
@@ -41,7 +40,6 @@ public class Command extends CommandBase {
 		switch (stat) {
 		case 0:
 			return "(disabled)";
-
 		case 1:
 		default:
 			return "non-important-messages";
@@ -76,9 +74,8 @@ public class Command extends CommandBase {
 		return true;
 	}
 
-	// Manage messages
 	public void showMessage(String message, ICommandSender sender) {
-		sender.addChatMessage(new ChatComponentText(secondary + message));
+		sender.addChatMessage(new ChatComponentText(message));
 	}
 
 	@Override

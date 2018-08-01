@@ -14,7 +14,7 @@ import net.minecraftforge.common.config.Property;
 import net.minecraftforge.common.config.Property.Type;
 
 public class GuiSettings {
-	HashMap<String, ConfigCategory> caHashMap;
+	private HashMap<String, ConfigCategory> caHashMap;
 
 	public HashMap<String, ConfigCategory> getMessages() {
 		List<Trigger> triggers = ChatCleaner.Handler_.triggers;

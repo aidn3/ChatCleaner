@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 
 import com.aidn5.chatcleaner.config.Command;
+import com.aidn5.chatcleaner.config.Config;
 import com.aidn5.chatcleaner.gui.GuiSettings;
 import com.aidn5.chatcleaner.services.ChatTriggers;
 import com.aidn5.chatcleaner.services.ChatTriggers.Trigger;
@@ -45,7 +46,7 @@ public class Handler_ {
 		looper.runnableList.add(new Runnable() {
 			@Override
 			public void run() {
-				// if (!onHypixel) return;
+				if (!onHypixel) return;
 				List<Trigger> triggers1 = ChatTriggers.getTriggers(true);
 				triggers = triggers1;
 
@@ -63,7 +64,8 @@ public class Handler_ {
 	}
 
 	public boolean matchRegex(String message) {
-		// if (!onHypixel) return false;
+		if (!onHypixel) return false;
+		double timeNeeded = System.currentTimeMillis();
 		try {
 			int currentPriority = Integer.valueOf(settingsHandler.get("priority", "1"));
 			for (Trigger trigger : triggers) {
@@ -82,6 +84,7 @@ public class Handler_ {
 				}
 			}
 		} catch (Exception ignored) {}
+		System.out.println(Config.MOD_NAME + ": " + (System.currentTimeMillis() - timeNeeded));
 		return false;
 	}
 
