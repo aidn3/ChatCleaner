@@ -1,162 +1,90 @@
 {
     "triggers": [
         {
-            "regex": "^Cages open in: (?:[6-9]|4)? seconds",
-            "disc": "Cages open in: [4,6,7,8,9] seconds",
+            "regex": "^1515A5QTasR QWdefeRSdQ35Fqs 1",
+            "disc": "This color means non-important-messages",
             "priority": 1,
-            "category": "skywars_duel",
-            "id": "3627ef80ab8951220b50ed9f",
+            "category": "\u00a76\u00a7nHow does it work",
+            "id": "efd6d853926784a8321f14c9",
             "replaceWith": ""
         },
         {
-            "regex": "^Cages open in: (?:[0-9]{1,3})? seconds",
-            "disc": "Cages open in: [ALL] seconds",
+            "regex": "^1515A5QTasR QWdefeRSdQ35Fqs 2",
+            "disc": "This color means mid-important-messages",
             "priority": 2,
-            "category": "skywars_duel",
-            "id": "fde0dd733409637bd1b2aa92",
+            "category": "\u00a76\u00a7nHow does it work",
+            "id": "26864335dc910ada5ca6e44d",
             "replaceWith": ""
         },
         {
-            "regex": "^Cages opened! FIGHT",
-            "disc": "Cages opened! FIGHT!",
-            "priority": 1,
-            "category": "skywars_duel",
-            "id": "12771106cefcea4fe6ea4560",
+            "regex": "^1515A5QTasR QWdefeRSdQ35Fqs 3",
+            "disc": "This color means really-important-messages",
+            "priority": 3,
+            "category": "\u00a76\u00a7nHow does it work",
+            "id": "f82097f91609d4dcf13dbcfb",
             "replaceWith": ""
         },
         {
-            "regex": "^Type \/kits to re-open the kit selection",
-            "disc": "Type \/kits to re-open the kit selection",
-            "priority": 1,
-            "category": "skywars_duel",
-            "id": "fdc9aa4678a3066363c7216d",
-            "replaceWith": ""
-        },
-        {
-            "regex": "^\\+(?:[0-9]{1,5})? Soul!",
-            "disc": "+1 Soul!",
-            "priority": 1,
-            "category": "skywars_duel",
-            "id": "2dbde01d10407466b530bfcc",
-            "replaceWith": ""
-        },
-        {
-            "regex": "^No stats will be affected in this round",
-            "disc": "No stats will be affected in this round",
-            "priority": 2,
-            "category": "skywars_duel",
-            "id": "a48874f9e6c7f512af3031f3",
-            "replaceWith": ""
-        },
-        {
-            "regex": "^You have selected the ",
-            "disc": "You have selected the ... kit",
-            "priority": 2,
-            "category": "skywars_duel",
-            "id": "a0ae1cb28e34dc2462b8ce6d",
-            "replaceWith": ""
-        },
-        {
-            "regex": "^(?:\\[[a-zA-Z+]{3,16}\\] |)(?:[a-zA-Z0-9_]{3,32}) has found [A-z \\(\\)]{1,100} in the Soul Well!",
-            "disc": "somone has found [something] in the Soul Well!",
-            "priority": 1,
-            "category": "skywars_duel",
-            "id": "ed0452bb866dda22e9ff46d9",
-            "replaceWith": ""
-        },
-        {
-            "regex": "^You don't have enough (?:[A-z]{1,32})?!",
-            "disc": "You don't have enough Iron!...",
-            "priority": 1,
-            "category": "Bedwars",
-            "id": "0293df31dc5479acb086dc19",
-            "replaceWith": ""
-        },
-        {
-            "regex": "^You purchased ",
-            "disc": "You purchased [item]",
-            "priority": 1,
-            "category": "Bedwars",
-            "id": "cf934e6352145cda71802313",
-            "replaceWith": ""
-        },
-        {
-            "regex": "^You have been eliminated!$",
-            "disc": "You have been eliminated!",
-            "priority": 1,
-            "category": "Bedwars",
-            "id": "f1dc2174283926d2e284cc33",
-            "replaceWith": ""
-        },
-        {
-            "regex": "^You will respawn in (?:4|2)? seconds",
-            "disc": "You will respawn in [2,4] seconds",
-            "priority": 1,
-            "category": "Bedwars",
-            "id": "6fd31965f7f96cbaf569566d",
-            "replaceWith": ""
-        },
-        {
-            "regex": "^You will respawn in (?:[0-9]{1,3})? seconds",
-            "disc": "You will respawn in [ALL] seconds",
-            "priority": 2,
-            "category": "Bedwars",
-            "id": "b0fc3780e20b94ca5d2cf28e",
-            "replaceWith": ""
-        },
-        {
-            "regex": "^You have respawned!",
-            "disc": "You have respawned!",
-            "priority": 1,
-            "category": "Bedwars",
-            "id": "92d3094d44690998d7c505a4",
-            "replaceWith": ""
-        },
-        {
-            "regex": "^\\+(?:[0-9]{1,5})? Bed Wars Experience",
-            "disc": "+25 Bed Wars Experience",
-            "priority": 1,
-            "category": "Bedwars",
-            "id": "5109285288c85b630cec9cd4",
-            "replaceWith": ""
-        },
-        {
-            "regex": "^You have respawned!",
-            "disc": "You have respawned!",
-            "priority": 1,
-            "category": "Bedwars",
-            "id": "92d3094d44690998d7c505a4",
-            "replaceWith": ""
-        },
-        {
-            "regex": "^Sending you to",
+            "regex": "^Sending you to ",
             "disc": "Sending you to mini123",
             "priority": 1,
-            "category": "server",
-            "id": "b57660159224c0b13d276079",
+            "category": "Server",
+            "id": "f97e1c18a0df311d87425624",
             "replaceWith": ""
         },
         {
             "regex": "^Already connecting to this server",
             "disc": "Already connecting to this server",
             "priority": 1,
-            "category": "server",
+            "category": "Server",
             "id": "4a80ebaf9be82d688fff0858",
             "replaceWith": ""
         },
         {
-            "regex": "^Server mini181P shutdown at",
+            "regex": "^Server mini(?:[0-9a-zA-Z]{2,5}) shutdown at",
             "disc": "Server mini181P shutdown at...",
             "priority": 1,
-            "category": "server",
-            "id": "8075d02cece9484e601bb906",
+            "category": "Server",
+            "id": "9b25c80e68959f88e532524d",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^(?:\u00a7b>\u00a7c>\u00a7a> |)(?:[a-zA-Z0-9\u00a7]{1,4}|)(?:\\[[a-zA-Z0-9+\u00a7]{3,16}\\] |)(?:[a-zA-Z0-9_]{3,32})\u00a7f\u00a76 joined the lobby!(?: \u00a7a<\u00a7c<\u00a7b<|)",
+            "disc": "[VIP] SomeOne joined the lobby!",
+            "priority": 1,
+            "category": "Lobby & Other",
+            "id": "c8fafd4f797f62935bda550a",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^\\[Mystery Box\\] (?:[a-zA-Z0-9_+\u00a7]{3,32}) \u00a7ffound ",
+            "disc": "[Mystery Box] SomeOne found CoolStuff",
+            "priority": 1,
+            "category": "Lobby & Other",
+            "id": "8170351548dc3729130a27b3",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^(?:[a-zA-Z0-9_+\u00a7]{3,32}) found a \u2730\u2730\u2730\u2730\u2730 Mystery Box",
+            "disc": "SomeOne found a \u2730\u2730\u2730\u2730\u2730 Mystery Box!",
+            "priority": 1,
+            "category": "Lobby & Other",
+            "id": "7d9bb4aa61fbdbe96de45393",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^(?:[a-zA-Z0-9_]{3,32}) (?:joined|left)",
+            "disc": "Friend joined\/left",
+            "priority": 3,
+            "category": "Lobby & Other",
+            "id": "988d01c6e8cd5b2f08b14839",
             "replaceWith": ""
         },
         {
             "regex": "^You were teleported to(?:| \\[[a-zA-Z+]{3,16}\\]|)(?: [a-zA-Z0-9_]{3,32})$",
             "disc": "You were teleported to username",
             "priority": 1,
-            "category": "in-game",
+            "category": "In-game",
             "id": "5c529a955b409b10333c24ea",
             "replaceWith": ""
         },
@@ -164,7 +92,7 @@
             "regex": "^Queued! Use the bed to return to lobby!$",
             "disc": "Queued! Use the bed to return to lobby!",
             "priority": 1,
-            "category": "in-game",
+            "category": "In-game",
             "id": "cf21a8385b153daa0fccd914",
             "replaceWith": ""
         },
@@ -172,31 +100,47 @@
             "regex": "^(?:\\[[a-zA-Z+]{3,16}\\] |)(?:[a-zA-Z0-9_]{3,32}) has joined \\(",
             "disc": "username has joined (7\/16)",
             "priority": 3,
-            "category": "in-game",
+            "category": "In-game",
             "id": "ebb48467ac8f650e10e2962d",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^(?:\\[[a-zA-Z+]{3,16}\\] |)(?:[a-zA-Z0-9_]{3,32}) has quit",
+            "disc": "username has quit!",
+            "priority": 3,
+            "category": "In-game",
+            "id": "8330947a67d8f42908c30be5",
             "replaceWith": ""
         },
         {
             "regex": "^\\+(?:[0-9]{1,5})? Karma!",
             "disc": "+25 Karma!",
             "priority": 2,
-            "category": "in-game",
+            "category": "In-game",
             "id": "1f6cdae673a1a8c95e6a4b6f",
             "replaceWith": ""
         },
         {
             "regex": "^\\+(?:[0-9]{1,5})? Coins!",
-            "disc": "+25 Coins!",
+            "disc": "+30 Coins!",
             "priority": 1,
-            "category": "in-game",
+            "category": "In-game",
             "id": "180d1128e4256d2d741359ca",
             "replaceWith": ""
         },
         {
-            "regex": "^The game starts in (?:[6-9]|[0-4])? seconds",
-            "disc": "The game starts in [1,2,3,4,6,7,8,9] seconds",
+            "regex": "^\\+(?:[0-9]{1,5})? Hypixel Experience!",
+            "disc": "+50 Hypixel Experience!",
             "priority": 1,
-            "category": "in-game",
+            "category": "In-game",
+            "id": "211e9e3bf71821b2d9cfd7e2",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^The game starts in (?:[6-9]|[0-4])? seconds",
+            "disc": "The game starts in [Except 10,5] seconds",
+            "priority": 1,
+            "category": "In-game",
             "id": "23e06f36182dfa87361ad3c3",
             "replaceWith": ""
         },
@@ -204,8 +148,216 @@
             "regex": "^The game starts in (?:[0-9]{1,3})? seconds",
             "disc": "The game starts in [ALL] seconds",
             "priority": 2,
-            "category": "in-game",
+            "category": "In-game",
             "id": "8006e132d03e0f303de2053b",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^You must wait (?:[0-9]{1,2}) seconds between spray uses",
+            "disc": "You must wait 2 seconds between spray uses!",
+            "priority": 1,
+            "category": "In-game",
+            "id": "92aba37ffc5bff98f777eed6",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^Attempting to send you the resource pack",
+            "disc": "Attempting to send you the resource pack",
+            "priority": 1,
+            "category": "In-game",
+            "id": "ca842ab032f65b962e29ec24",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^Cages open in: (?:[6-9]|4)? seconds",
+            "disc": "Cages open in: [4,6,7,8,9] seconds",
+            "priority": 1,
+            "category": "Skywars & Duel",
+            "id": "3627ef80ab8951220b50ed9f",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^Cages open in: (?:[0-9]{1,3})? seconds",
+            "disc": "Cages open in: [ALL] seconds",
+            "priority": 2,
+            "category": "Skywars & Duel",
+            "id": "fde0dd733409637bd1b2aa92",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^Cages opened! FIGHT",
+            "disc": "Cages opened! FIGHT!",
+            "priority": 1,
+            "category": "Skywars & Duel",
+            "id": "12771106cefcea4fe6ea4560",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^Type \/kits to re-open the kit selection",
+            "disc": "Type \/kits to re-open the kit selection",
+            "priority": 1,
+            "category": "Skywars & Duel",
+            "id": "fdc9aa4678a3066363c7216d",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^\\+(?:[0-9]{1,5})? Soul!",
+            "disc": "+1 Soul!",
+            "priority": 1,
+            "category": "Skywars & Duel",
+            "id": "2dbde01d10407466b530bfcc",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^No stats will be affected in this round",
+            "disc": "No stats will be affected in this round",
+            "priority": 2,
+            "category": "Skywars & Duel",
+            "id": "a48874f9e6c7f512af3031f3",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^You have selected the ",
+            "disc": "You have selected the ... kit",
+            "priority": 2,
+            "category": "Skywars & Duel",
+            "id": "a0ae1cb28e34dc2462b8ce6d",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^(?:\\[[a-zA-Z+]{3,16}\\] |)(?:[a-zA-Z0-9_]{3,32}) has found [A-z \\(\\)]{1,100} in the Soul Well!",
+            "disc": "somone has found [something] in the Soul Well!",
+            "priority": 1,
+            "category": "Skywars & Duel",
+            "id": "ed0452bb866dda22e9ff46d9",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^(?:Diamond|Emerald) Generators have been upgraded to ",
+            "disc": "Diamond Generators have been upgraded...",
+            "priority": 2,
+            "category": "BedWars",
+            "id": "6abd1b7f34947c2b1e627561",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^You don't have enough (?:[A-z]{1,32})?!",
+            "disc": "You don't have enough Iron!...",
+            "priority": 1,
+            "category": "BedWars",
+            "id": "0293df31dc5479acb086dc19",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^If you get disconnected use \/rejoin to join back in the game",
+            "disc": "If you get disconnected use \/rejoin...",
+            "priority": 1,
+            "category": "BedWars",
+            "id": "86b69a5b08bdde44598847c4",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^You purchased ",
+            "disc": "You purchased [item]",
+            "priority": 1,
+            "category": "BedWars",
+            "id": "cf934e6352145cda71802313",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^You have been eliminated!$",
+            "disc": "You have been eliminated!",
+            "priority": 1,
+            "category": "BedWars",
+            "id": "f1dc2174283926d2e284cc33",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^You will respawn in (?:[0-9]{1,3})? seconds",
+            "disc": "You will respawn in [ALL] seconds",
+            "priority": 2,
+            "category": "BedWars",
+            "id": "b0fc3780e20b94ca5d2cf28e",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^You have respawned!",
+            "disc": "You have respawned!",
+            "priority": 1,
+            "category": "BedWars",
+            "id": "92d3094d44690998d7c505a4",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^\\+(?:[0-9]{1,5})? Bed Wars Experience",
+            "disc": "+25 Bed Wars Experience",
+            "priority": 1,
+            "category": "BedWars",
+            "id": "5109285288c85b630cec9cd4",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^You have respawned!",
+            "disc": "You have respawned!",
+            "priority": 1,
+            "category": "BedWars",
+            "id": "92d3094d44690998d7c505a4",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^Welcome to the Housing BETA!",
+            "disc": "Welcome to the Housing BETA!",
+            "priority": 2,
+            "category": "Housing",
+            "id": "bd21aa2c02b2da90ef89f7a3",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^Housing is currently in BETA!",
+            "disc": "Housing is currently in BETA!",
+            "priority": 1,
+            "category": "Housing",
+            "id": "e06a8b3213a399cd15bbda6e",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^If you happen to come across any bugs",
+            "disc": "If you happen to come across any bugs...",
+            "priority": 1,
+            "category": "Housing",
+            "id": "8c80a29115b3211d11010343",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^(?:\\[[a-zA-Z+]{3,16}\\] |)(?:[a-zA-Z0-9_]{3,32})",
+            "disc": "SomeOne entered the world.",
+            "priority": 2,
+            "category": "Housing",
+            "id": "c7fc13408163f8d1fa93ff95",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^Saving your house",
+            "disc": "Saving your house...",
+            "priority": 1,
+            "category": "Housing",
+            "id": "07d83cf422ee8c11af7679df",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^Saved your house",
+            "disc": "Saved your house!",
+            "priority": 2,
+            "category": "Housing",
+            "id": "0a8eca37d6128f7482e00f07",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^You can't build outside your plot",
+            "disc": "You can't build outside your plot!",
+            "priority": 2,
+            "category": "Housing",
+            "id": "16ea5bbf8b3e3f0e66cff0d8",
             "replaceWith": ""
         }
     ]
