@@ -49,11 +49,35 @@
             "replaceWith": ""
         },
         {
-            "regex": "^(?:\u00a7b>\u00a7c>\u00a7a> |)(?:[a-zA-Z0-9\u00a7]{1,4}|)(?:\\[[a-zA-Z0-9+\u00a7]{3,16}\\] |)(?:[a-zA-Z0-9_]{3,32})\u00a7f\u00a76 joined the lobby!(?: \u00a7a<\u00a7c<\u00a7b<|)",
+            "regex": "^(?:\u00a7b>\u00a7c>\u00a7a>\u00a7r |)(?:[a-zA-Z0-9\u00a7]{1,4}|)(?:\\[[a-zA-Z0-9+\u00a7]{3,10}\\] |)(?:[a-zA-Z0-9_+]){3,32}(?:\u00a7f\u00a76|) joined the lobby!",
             "disc": "[VIP] SomeOne joined the lobby!",
             "priority": 1,
             "category": "Lobby & Other",
-            "id": "c8fafd4f797f62935bda550a",
+            "id": "27218996b70e3ab3d51fb4fa",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^(?:\\[WATCHDOG ANNOUNCEMENT\\]|Watchdog has banned [0-9,]{1,10} players in the last 7 days|Staff have banned an additional [0-9,]{1,10} in the last 7 days|Blacklisted modifications are a bannable offense)",
+            "disc": "[WATCHDOG ANNOUNCEMENT]",
+            "priority": 1,
+            "category": "Lobby & Other",
+            "id": "6e0314d0b238ab37216e2a58",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^(?:Buy Network Boosters at https:\\\/\\\/store\\.hypixel\\.net|\u00a7a\u27b2 \u00a7b(?:[a-zA-Z0-0+_]){3,32} \u00a7eactivated \u00a7c(?:[0-9X\\.+]){1,6}X coins)",
+            "disc": "[Boosters Network]",
+            "priority": 1,
+            "category": "Lobby & Other",
+            "id": "8fca034f6024eed717ab7f16",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^(?:Cross-teaming is not allowed!|Cross Teaming \\\/ Teaming with other teams is not allowed)",
+            "disc": "Cross-teaming is not allowed...",
+            "priority": 1,
+            "category": "Lobby & Other",
+            "id": "f84c05999250acfa4b516f33",
             "replaceWith": ""
         },
         {
@@ -73,11 +97,11 @@
             "replaceWith": ""
         },
         {
-            "regex": "^(?:[a-zA-Z0-9_]{3,32}) (?:joined|left)",
+            "regex": "^(?:[a-zA-Z0-9_]{3,32}) (?:joined|left)$",
             "disc": "Friend joined\/left",
             "priority": 3,
             "category": "Lobby & Other",
-            "id": "988d01c6e8cd5b2f08b14839",
+            "id": "561261da12d21639a28a9dec",
             "replaceWith": ""
         },
         {
@@ -185,6 +209,14 @@
             "replaceWith": ""
         },
         {
+            "regex": "^\u27a4 A Mega Doubles SkyWars game is available to join",
+            "disc": "^Mega Doubles SkyWars will start click here...",
+            "priority": 2,
+            "category": "Skywars & Duel",
+            "id": "c816baeaecd4f38849f713ee",
+            "replaceWith": ""
+        },
+        {
             "regex": "^Cages opened! FIGHT",
             "disc": "Cages opened! FIGHT!",
             "priority": 1,
@@ -193,11 +225,11 @@
             "replaceWith": ""
         },
         {
-            "regex": "^Type \/kits to re-open the kit selection",
+            "regex": "^Type \\\/kits to re-open the kit selection",
             "disc": "Type \/kits to re-open the kit selection",
             "priority": 1,
             "category": "Skywars & Duel",
-            "id": "fdc9aa4678a3066363c7216d",
+            "id": "162e52e3d0eae111f19f66a1",
             "replaceWith": ""
         },
         {
@@ -249,11 +281,11 @@
             "replaceWith": ""
         },
         {
-            "regex": "^If you get disconnected use \/rejoin to join back in the game",
+            "regex": "^If you get disconnected use \\\/rejoin to join back in the game",
             "disc": "If you get disconnected use \/rejoin...",
             "priority": 1,
             "category": "BedWars",
-            "id": "86b69a5b08bdde44598847c4",
+            "id": "417c8a6ee44f38eaf988a75c",
             "replaceWith": ""
         },
         {
@@ -329,11 +361,11 @@
             "replaceWith": ""
         },
         {
-            "regex": "^(?:\\[[a-zA-Z+]{3,16}\\] |)(?:[a-zA-Z0-9_]{3,32})",
+            "regex": "^(?:\\[[a-zA-Z+]{3,16}\\] |){1,3}(?:[a-zA-Z0-9_]{3,32}) entered the world",
             "disc": "SomeOne entered the world.",
             "priority": 2,
             "category": "Housing",
-            "id": "c7fc13408163f8d1fa93ff95",
+            "id": "66b8876e49ff6860a711bd4a",
             "replaceWith": ""
         },
         {

@@ -49,11 +49,11 @@
             "replaceWith": ""
         },
         {
-            "regex": "(?:\u00a7b>\u00a7c>\u00a7a>\u00a7r |)(?:[a-zA-Z0-9\u00a7]{1,4}|)(?:\\[[a-zA-Z0-9+\u00a7]{3,10}\\] |)(?:[a-zA-Z0-9_+]){3,32}(?:\u00a7f\u00a76|) joined the lobby!",
+            "regex": "^(?:\u00a7b>\u00a7c>\u00a7a>\u00a7r |)(?:[a-zA-Z0-9\u00a7]{1,4}|)(?:\\[[a-zA-Z0-9+\u00a7]{3,10}\\] |)(?:[a-zA-Z0-9_+]){3,32}(?:\u00a7f\u00a76|) joined the lobby!",
             "disc": "[VIP] SomeOne joined the lobby!",
             "priority": 1,
             "category": "Lobby & Other",
-            "id": "3c7d82aa74f83677d378bda4",
+            "id": "27218996b70e3ab3d51fb4fa",
             "replaceWith": ""
         },
         {
@@ -73,11 +73,11 @@
             "replaceWith": ""
         },
         {
-            "regex": "(?:Cross-teaming is not allowed!|Cross Teaming \\\/ Teaming with other teams is not allowed)",
+            "regex": "^(?:Cross-teaming is not allowed!|Cross Teaming \\\/ Teaming with other teams is not allowed)",
             "disc": "Cross-teaming is not allowed...",
             "priority": 1,
             "category": "Lobby & Other",
-            "id": "070522965221375cdd2a91f5",
+            "id": "f84c05999250acfa4b516f33",
             "replaceWith": ""
         },
         {
@@ -361,11 +361,11 @@
             "replaceWith": ""
         },
         {
-            "regex": "(?:\\[[a-zA-Z+]{3,16}\\] |){1,3}(?:[a-zA-Z0-9_]{3,32}) entered the world",
+            "regex": "^(?:\\[[a-zA-Z+]{3,16}\\] |){1,3}(?:[a-zA-Z0-9_]{3,32}) entered the world",
             "disc": "SomeOne entered the world.",
             "priority": 2,
             "category": "Housing",
-            "id": "3210a0e0dc5ab5f038d1bd2e",
+            "id": "66b8876e49ff6860a711bd4a",
             "replaceWith": ""
         },
         {
