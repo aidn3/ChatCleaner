@@ -64,7 +64,6 @@ public class Handler_ {
 
 	public boolean matchRegex(String message) {
 		if (!onHypixel) return false;
-		double timeNeeded = System.currentTimeMillis();
 		try {
 			int currentPriority = Integer.valueOf(settingsHandler.get("priority", "1"));
 			for (Trigger trigger : triggers) {
