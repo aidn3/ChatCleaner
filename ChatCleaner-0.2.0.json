@@ -97,11 +97,19 @@
             "replaceWith": ""
         },
         {
-            "regex": "^(?:[a-zA-Z0-9_]{3,32}) (?:joined|left)$",
+            "regex": "^(?:[a-zA-Z0-9_]{3,32}) (?:joined|left)\\.$",
             "disc": "Friend joined\/left",
             "priority": 3,
             "category": "Lobby & Other",
-            "id": "561261da12d21639a28a9dec",
+            "id": "c85bc6ab0f13cdabd78138d4",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^[-]{53}$",
+            "disc": "Remove '-------...' before and after messages",
+            "priority": 2,
+            "category": "Lobby & Other",
+            "id": "2602da23203ae4b8ec877c7f",
             "replaceWith": ""
         },
         {
@@ -390,6 +398,54 @@
             "priority": 2,
             "category": "Housing",
             "id": "16ea5bbf8b3e3f0e66cff0d8",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^KALI HAS STRIKEN YOU WITH THE CURSE",
+            "disc": "KALI: get rid of 'Spam curse'",
+            "priority": 2,
+            "category": "MurderMystery",
+            "id": "dd994ab358ec50258a7df402",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^The Murderer has received their sword",
+            "disc": "The Murderer has received their sword!",
+            "priority": 2,
+            "category": "MurderMystery",
+            "id": "0a1f3e033da46eb3e3b6b8d5",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^The Murderer gets their sword in (?:[0-9]{1,2}) second",
+            "disc": "The Murderer gets their sword in 5 seconds!",
+            "priority": 1,
+            "category": "MurderMystery",
+            "id": "3b6ffce5237a5443ded1e5da",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^You picked up the Bow! GOAL",
+            "disc": "picked up the Bow! Find and kill the murderer!",
+            "priority": 1,
+            "category": "MurderMystery",
+            "id": "a359fb12fd22b720cbade622",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^The Detective has been killed",
+            "disc": "The Detective has been killed!",
+            "priority": 2,
+            "category": "MurderMystery",
+            "id": "1c596c9f3545c3c28937d2f6",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^[0-9]{1,2} Creepers remaining",
+            "disc": "CreeperAttack: '3 Creepers remaining'",
+            "priority": 3,
+            "category": "Arcade",
+            "id": "3842628032722b5422ac452d",
             "replaceWith": ""
         }
     ]
