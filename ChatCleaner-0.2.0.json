@@ -49,11 +49,11 @@
             "replaceWith": ""
         },
         {
-            "regex": "^(?:\u00a7b>\u00a7c>\u00a7a>\u00a7r |)(?:[a-zA-Z0-9\u00a7]{1,4}|)(?:\\[[a-zA-Z0-9+\u00a7]{3,10}\\] |)(?:[a-zA-Z0-9_+]){3,32}(?:\u00a7f\u00a76|) joined the lobby!",
+            "regex": "^(?: |)(?:\u00a7b>\u00a7c>\u00a7a>\u00a7r |)(?:[a-zA-Z0-9\u00a7]{1,4}|)(?:\\[[a-zA-Z0-9+\u00a7]{3,10}\\] |)(?:[a-zA-Z0-9_+]){3,32}(?:\u00a7f\u00a76|) joined the lobby!",
             "disc": "[VIP] SomeOne joined the lobby!",
             "priority": 1,
             "category": "Lobby & Other",
-            "id": "27218996b70e3ab3d51fb4fa",
+            "id": "00ab542cbee5a4fb6ad14b43",
             "replaceWith": ""
         },
         {
@@ -110,6 +110,30 @@
             "priority": 2,
             "category": "Lobby & Other",
             "id": "2602da23203ae4b8ec877c7f",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^\u00a7aYou tipped (?:[0-9]{1,3}) player in (?:[0-9]{1,3}) different game",
+            "disc": "You tipped 1 player in...",
+            "priority": 1,
+            "category": "Lobby & Other",
+            "id": "a52de9d7f3023b48329f0c81",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^You already tipped everyone that has boosters active",
+            "disc": "You already tipped everyone that has...",
+            "priority": 1,
+            "category": "Lobby & Other",
+            "id": "03c8d9ab87f854793a8d9efe",
+            "replaceWith": ""
+        },
+        {
+            "regex": "^You are AFK. Move around to return from AFK",
+            "disc": "You are AFK. Move around to return from AFK",
+            "priority": 2,
+            "category": "Lobby & Other",
+            "id": "e174deeb4c75299045ba5df7",
             "replaceWith": ""
         },
         {
@@ -387,7 +411,7 @@
         {
             "regex": "^Saved your house",
             "disc": "Saved your house!",
-            "priority": 2,
+            "priority": 3,
             "category": "Housing",
             "id": "0a8eca37d6128f7482e00f07",
             "replaceWith": ""
@@ -441,6 +465,14 @@
             "replaceWith": ""
         },
         {
+            "regex": "^Teaming with the Murderer is",
+            "disc": "Teaming with the Murderer is not allowed!",
+            "priority": 1,
+            "category": "MurderMystery",
+            "id": "7f7b2c5ad258f7e697e9a804",
+            "replaceWith": ""
+        },
+        {
             "regex": "^[0-9]{1,2} Creepers remaining",
             "disc": "CreeperAttack: '3 Creepers remaining'",
             "priority": 3,
@@ -450,4 +482,3 @@
         }
     ]
 }
-
